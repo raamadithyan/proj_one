@@ -29,7 +29,15 @@ const Modal: React.FC<Modelprops> = (
   const [showModel, setShowModel] = useState(isOpen)
   useEffect(() => {
     setShowModel(isOpen)
-  }, [isOpen])
+  }, [isOpen]) 
+
+  function handleClose(){
+    if(disabled){
+      return
+    }
+
+    onClose()
+  }
   return (
     <div>modal</div>
   )
