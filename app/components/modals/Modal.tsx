@@ -1,22 +1,22 @@
 "use client";
 import { isPageStatic } from "next/dist/build/utils";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 interface Modelprops {
-isOpen?: boolean;
-   onClose: () => void;
-   onSubmit: () => void;
-   title?: string;
-   body?: React.ReactElement;
-   footer?: React.ReactElement;
-   actionLabel: string;
-   disabled?: boolean;
-   secondaryAction?: () => void;
-   secondaryLabel?: string;
+  isOpen?: boolean;
+  onClose: () => void;
+  onSubmit: () => void;
+  title?: string;
+  body?: React.ReactElement;
+  footer?: React.ReactElement;
+  actionLabel: string;
+  disabled?: boolean;
+  secondaryAction?: () => void;
+  secondaryLabel?: string;
 }
 const Modal: React.FC<Modelprops> = (
   { isOpen,
-    onClose, 
+    onClose,
     onSubmit,
     title,
     body,
@@ -29,17 +29,56 @@ const Modal: React.FC<Modelprops> = (
   const [showModel, setShowModel] = useState(isOpen)
   useEffect(() => {
     setShowModel(isOpen)
-  }, [isOpen]) 
+  }, [isOpen])
 
-  function handleClose(){
-    if(disabled){
-      return
-    }
+  const handleOpen = useCallback(
+    () => {
+      if (disabled) {
+        return
+      }
+      setTimeout(() => onClose(), 300)
+      setShowModel(false)
 
-    onClose()
+    },
+    [disabled, onClose],
+  )
+
+  const handleSubmit = useCallback(
+    () => {
+      if (disabled) {
+        return
+      }
+      onSubmit()
+    },
+    [disabled, onSubmit]
+  )
+
+  const handleSecondaryAction = useCallback(
+    () => {
+      if (disabled) {
+        return
+      }
+      secondaryAction()
+    },
+    [disabled, secondaryAction]
+  )
+
+  if (!isOpen) {
+    return null;
   }
+
+
   return (
-    <div>modal</div>
+    <div className="
+    flex 
+    justify-content
+    items-center
+    overflow-x-hide
+    overflow-y-auto
+    
+    "
+
+    >modal</div>
   )
 }
 
