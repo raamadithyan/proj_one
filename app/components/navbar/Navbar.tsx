@@ -6,7 +6,7 @@ import Search from "./Search";
 import Login from "./Login";
 function Navbar() {
   return (
-    <div className="fixed w-full  z-10 shadow-md bg-white  ">
+    <div className="fixed w-full  z-0 shadow-md bg-white  ">
       <div className="py-4 border-b-[1px]">
         <Container>
           <div className="flex items-center  justify-between lg:gap-16 sm:gap-8" >

@@ -69,16 +69,31 @@ const Modal: React.FC<Modelprops> = (
 
 
   return (
-    <div className="
-    flex 
-    justify-content
+    <>
+      <div className="
+    justify-center
     items-center
-    overflow-x-hide
+    flex 
+
+    overflow-x-hidden
     overflow-y-auto
-    
+    bg-neutral-800/60
+    fixed
+    inset-0
+    z-10
+    outline-none
+    focus:outline-none
     "
 
-    >modal</div>
+
+
+
+      >
+        <div className="
+      
+      "></div>
+      </div>
+    </>
   )
 }
 
