@@ -91,7 +91,7 @@ const Modal: React.FC<Modelprops> = (
       >
         <div className="
       
-      ">CodeSpaces</div>
+      ">CodeSpaces v2</div>
       </div>
     </>
   )
