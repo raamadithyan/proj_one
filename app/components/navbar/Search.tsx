@@ -8,7 +8,7 @@ function Search() {
     focus:bg-red-200 md:py-2 md:w-auto  ">
       <div className="flex flex-row items-center justify-end   ">
         <div className=" hidden text-sm text-red-500 font-semibold pr-6 pl-3 md:block ">
-          Anywhere
+          Changeover 
         </div>
 
         <div className="hidden  text-sm text-red-500 font-semibold px-6  border-x-[1px] border-red-400 md:block">Any Week</div>
