@@ -137,11 +137,12 @@ const Modal: React.FC<Modelprops> = (
             
                 <button className='
               p-1
-              border-0
+              sm:uborder-0
               hover:opacity-70
               transition
               absolute
               left-9
+              lg:border
               ' >
                   <IoMdClose size={16} />
                 </button>
@@ -161,8 +162,24 @@ const Modal: React.FC<Modelprops> = (
               </div>
               {/* FOOTER */}
               <div className='flex flex-col gap-2 p-6'>
-                <div className='flex flex-row'></div>
-                <Button outline label={'Google'}/>
+                <div className='flex flex-row gap-4'>
+
+                <Button 
+                onClick={handleSubmit}
+                disabled={!disabled}
+                label={'Error'}
+                icon={IoMdClose} 
+                outline
+                
+                />
+
+                <Button 
+                onClick={handleSubmit}
+                disabled={disabled}
+                label={actionLabel}
+                icon={IoMdClose} />
+                </div>
+             
               </div>
             </div>
           </div>

@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Modal isOpen title={'login'}  />
+        <Modal actionLabel={'Submit'} isOpen title={'login'}  />
         <Navbar />
         {children}</body>
     </html>
