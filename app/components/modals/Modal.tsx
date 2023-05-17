@@ -1,7 +1,9 @@
 "use client";
-import {IoMdClose} from 'react-icons/io'
+import { IoMdClose } from 'react-icons/io'
 import { isPageStatic } from "next/dist/build/utils";
 import { useState, useEffect, useCallback } from "react";
+
+import Button from '../navbar/Button'
 
 interface Modelprops {
   isOpen?: boolean;
@@ -15,6 +17,7 @@ interface Modelprops {
   secondaryAction?: () => void;
   secondaryLabel?: string;
 }
+
 const Modal: React.FC<Modelprops> = (
   { isOpen,
     onClose,
@@ -32,14 +35,13 @@ const Modal: React.FC<Modelprops> = (
     setShowModel(isOpen)
   }, [isOpen])
 
-  const handleOpen = useCallback(
+  const handleClose = useCallback(
     () => {
       if (disabled) {
         return
       }
       setTimeout(() => onClose(), 300)
       setShowModel(false)
-
     },
     [disabled, onClose],
   )
@@ -63,11 +65,9 @@ const Modal: React.FC<Modelprops> = (
     },
     [disabled, secondaryAction]
   )
-
   if (!isOpen) {
     return null;
   }
-
 
   return (
     <>
@@ -75,7 +75,6 @@ const Modal: React.FC<Modelprops> = (
     justify-center
     items-center
     flex 
-
     overflow-x-hidden
     overflow-y-auto
     bg-neutral-800/60
@@ -85,10 +84,6 @@ const Modal: React.FC<Modelprops> = (
     outline-none
     focus:outline-none
     "
-
-
-
-
       >
         <div className="
         relative
@@ -101,20 +96,18 @@ const Modal: React.FC<Modelprops> = (
         h-full
         lg:h-auto
         md:h-auto
-
       
       ">
-        {/* CONTeNT */}
-        <div className={
-          `translate
+          {/* CONTeNT */}
+          <div className={
+            `translate
           duration-300
           h-full
-          ${showModel?'translate-y-0':'translate-y-full'}
-          ${showModel?'opacity-100':'opacity-0'}
-
+          ${showModel ? 'translate-y-0' : 'translate-y-full'}
+          ${showModel ? 'opacity-100' : 'opacity-0'}
           `
-        }>
-          <div className="
+          }>
+            <div className="
           translate
           h-full
           lg:h-auto
@@ -130,35 +123,52 @@ const Modal: React.FC<Modelprops> = (
           outline-none
           focus:outline-none
           ">
-            {/* HEADER */}
-
-            <div className="
+              {/* HEADER */}
+              <div className="
             flex
-            item-center
+            items-center
             p-6
             rounded-t
             justify-center
-            
-            
+            relative
+            border-b-[1px]
             ">
-              <button >
-                <IoMdClose size={16}/>
-              </button>
+            
+            
+                <button className='
+              p-1
+              border-0
+              hover:opacity-70
+              transition
+              absolute
+              left-9
+              ' >
+                  <IoMdClose size={16} />
+                </button>
+                <div className='
+                 text-[1rem] font-black
+                '>
+                  {title}
+                </div>
+              </div>
+              {/* BODY */}
+              <div className='
+              relative
+              flex-auto
+              p-6
+              '>
+                {body}
+              </div>
+              {/* FOOTER */}
+              <div className='flex flex-col gap-2 p-6'>
+                <div className='flex flex-row'></div>
+                <Button label={'Google'}/>
+              </div>
             </div>
-
           </div>
-
         </div>
-
-
-      </div>
       </div>
     </>
   )
 }
-
-
 export default Modal
-
-
-
