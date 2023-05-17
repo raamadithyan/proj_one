@@ -162,7 +162,7 @@ const Modal: React.FC<Modelprops> = (
               {/* FOOTER */}
               <div className='flex flex-col gap-2 p-6'>
                 <div className='flex flex-row'></div>
-                <Button label={'Google'}/>
+                <Button outline label={'Google'}/>
               </div>
             </div>
           </div>
