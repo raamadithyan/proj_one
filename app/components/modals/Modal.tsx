@@ -15,7 +15,7 @@ interface Modelprops {
   actionLabel: string;
   disabled?: boolean;
   secondaryAction?: () => void;
-  secondaryLabel?: string;
+  secondaryActionLabel?: string;
 }
 
 const Modal: React.FC<Modelprops> = (
@@ -28,7 +28,7 @@ const Modal: React.FC<Modelprops> = (
     actionLabel,
     disabled,
     secondaryAction,
-    secondaryLabel }
+    secondaryActionLabel }
 ) => {
   const [showModel, setShowModel] = useState(isOpen)
   useEffect(() => {
@@ -163,7 +163,7 @@ const Modal: React.FC<Modelprops> = (
               {/* FOOTER */}
               <div className='flex flex-col gap-2 p-6'>
                 <div className='flex flex-row gap-4'>
-
+              {secondaryAction && secondaryActionLabel && (
                 <Button 
                 onClick={handleSubmit}
                 disabled={!disabled}
@@ -172,12 +172,16 @@ const Modal: React.FC<Modelprops> = (
                 outline
                 
                 />
+              )}
+                
 
                 <Button 
                 onClick={handleSubmit}
                 disabled={disabled}
                 label={actionLabel}
-                icon={IoMdClose} />
+                icon={IoMdClose} 
+                
+                />
                 </div>
              
               </div>
