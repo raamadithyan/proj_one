@@ -14,7 +14,7 @@ import useRegisterModal from '@/app/hooks/useRegisterModel';
 function RegisterModel() {
   const store= useRegisterModal()
   return (
-    <Modal isOpen={store.isOpen}/>
+    <Modal title={'V3'} isOpen={store.isOpen}/>
   )
 }
 
