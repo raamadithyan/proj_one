@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <RegisterModal actionLabel={'Submit'} isOpen title={'login'}  />
+        <RegisterModal   />
         <Navbar />
         {children}</body>
     </html>

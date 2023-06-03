@@ -2,6 +2,7 @@
 import { IoMdClose } from 'react-icons/io'
 import { isPageStatic } from "next/dist/build/utils";
 import { useState, useEffect, useCallback } from "react";
+import useRegisterModal from '@/app/hooks/useRegisterModel';
 
 import Button from '../navbar/Button'
 
@@ -30,6 +31,8 @@ const Modal: React.FC<Modelprops> = (
     secondaryAction,
     secondaryActionLabel }
 ) => {
+const store= useRegisterModal()
+
   const [showModel, setShowModel] = useState(isOpen)
   useEffect(() => {
     setShowModel(isOpen)
@@ -144,7 +147,7 @@ const Modal: React.FC<Modelprops> = (
               left-9
               lg:border
               ' >
-                  <IoMdClose size={16} />
+                  <IoMdClose onClick={store.onClose} size={16} />
                 </button>
                 <div className='
                  text-[1rem] font-black
