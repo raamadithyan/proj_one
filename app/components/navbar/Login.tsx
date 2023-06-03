@@ -4,14 +4,16 @@ import { useState, useEffect, useRef } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai'
 import { RxAvatar } from 'react-icons/rx'
 import Menuitem from './Menuitem';
+import useRegisterModal from '@/app/hooks/useRegisterModel';
 
 
 function Login() {
+const store= useRegisterModal()
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [loginOpen, setloginOpen] = useState(false);
   const ref = useRef()
-  function handleOpen() {
-    setIsOpen((value) => !value)
+  function handleloginOpen() {
+    setloginOpen((value) => !value)
   }
 
   // useEffect(()=>{
@@ -43,7 +45,7 @@ function Login() {
         >
           Join the Family
         </div>
-        <div onClick={handleOpen}
+        <div onClick={handleloginOpen}
           className="p-4 md:py-1 md:px-2 border=[1px] text-red-500
         border-neutral-200 flex flex-row items-center
           gap-3 rounded-full cursor-pointer hover:shadow-md
@@ -52,10 +54,10 @@ function Login() {
         >
           <AiOutlineMenu />
           <RxAvatar size={30} className='text-red-500' />
-          {isOpen &&
+          {loginOpen &&
             <div className='absolute top-12 right-0 w-32 h-fit bg-white shadow-md'>
               <div className="flex flex-col justify-center cursor-pointer">
-                <Menuitem onClick={() => { }} label={'Login'} />
+                <Menuitem onClick={store.onOpen} label={'Login'} />
                 <Menuitem onClick={() => { }} label={'Signup'} />
               </div>
 
