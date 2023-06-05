@@ -58,7 +58,7 @@ const store= useRegisterModal()
             <div className='absolute top-12 right-0 w-32 h-fit bg-white shadow-md'>
               <div className="flex flex-col justify-center cursor-pointer">
                 <Menuitem onClick={store.onOpen} label={'Login'} />
-                <Menuitem onClick={() => { }} label={'Signup'} />
+                <Menuitem onClick={store.onOpen} label={'Signup'} />
               </div>
 
             </div>
