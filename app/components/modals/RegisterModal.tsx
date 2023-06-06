@@ -10,11 +10,21 @@ import {FcGoogle} from 'react-icons/fc'
 
 
 import useRegisterModal from '@/app/hooks/useRegisterModel';
+import  Heading  from '../heading/Heading';
 
 function RegisterModel() {
   const store= useRegisterModal()
+  const bodyContent = <div 
+  className='flex flex-col gap-4'>
+<Heading title='Bruh'/>
+    </div>
+
   return (
-    <Modal isOpen={store.isOpen}/>
+    <Modal 
+    title='Register' 
+    isOpen={store.isOpen}
+    body={bodyContent }
+    />
   )
 }
 
