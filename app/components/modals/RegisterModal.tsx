@@ -16,7 +16,7 @@ function RegisterModel() {
   const store= useRegisterModal()
   const bodyContent = <div 
   className='flex flex-col gap-4'>
-<Heading title='Bruh'/>
+<Heading title='13.4.4'/>
     </div>
 
   return (
