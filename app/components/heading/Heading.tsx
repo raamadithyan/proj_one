@@ -7,7 +7,13 @@ interface HeadingProps{
 
 function Heading({title,subtitle,center}:HeadingProps) {
   return (
-    <div>{title}</div>
+    <>
+    <div className={center?'text-center':'text-start'}>
+    <div className=" font-bold font-sans">{title}</div>
+    <div className="font-light">{subtitle}</div>
+
+    </div>
+    </>
   )
 }
 

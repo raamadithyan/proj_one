@@ -11,19 +11,28 @@ import {FcGoogle} from 'react-icons/fc'
 
 import useRegisterModal from '@/app/hooks/useRegisterModel';
 import  Heading  from '../heading/Heading';
+import   Input  from '../input/Input';
 
 function RegisterModel() {
   const store= useRegisterModal()
   const bodyContent = <div 
   className='flex flex-col gap-4'>
-<Heading title='13.4.4'/>
-    </div>
+<Heading center 
+title='Welcome to Airbnb'
+subtitle='Create an account '
+  />
+  <Input  />
+</div>  
+
+const footerContent = <div> Footer</div>
+
 
   return (
     <Modal 
     title='Register' 
     isOpen={store.isOpen}
     body={bodyContent }
+    footer={footerContent}
     />
   )
 }

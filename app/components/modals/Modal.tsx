@@ -5,6 +5,8 @@ import { useState, useEffect, useCallback } from "react";
 import useRegisterModal from '@/app/hooks/useRegisterModel';
 
 import Button from '../navbar/Button'
+import { FcGoogle } from 'react-icons/fc';
+import { AiFillGithub } from 'react-icons/ai';
 
 interface Modelprops {
   isOpen?: boolean;
@@ -150,7 +152,7 @@ const store= useRegisterModal()
                   <IoMdClose onClick={store.onClose} size={16} />
                 </button>
                 <div className='
-                 text-[1rem] font-black
+                 text-[1rem] font-bold text-xl font-sans
                 '>
                   {title}
                 </div>
@@ -165,7 +167,7 @@ const store= useRegisterModal()
               </div>
               {/* FOOTER */}
               <div className='flex flex-col gap-2 p-6'>
-                <div className='flex flex-row gap-4'>
+                <div className='flex flex-col gap-4'>
               {secondaryAction && secondaryActionLabel && (
                 <Button 
                 onClick={handleSubmit}
@@ -181,11 +183,27 @@ const store= useRegisterModal()
                 <Button 
                 onClick={handleSubmit}
                 disabled={disabled}
-                label={actionLabel}
-                icon={IoMdClose} 
-                
+                // label={actionLabel}
+                // icon={IoMdClose} 
+                label='Continue'
+                />
+                <Button  outline
+                onClick={handleSubmit}
+                disabled={disabled}
+                // label={actionLabel}
+                icon={FcGoogle} 
+                label='Google'
+                />
+
+                <Button  outline
+                onClick={handleSubmit}
+                disabled={disabled}
+                // label={actionLabel}
+                icon={AiFillGithub} 
+                label='Github'
                 />
                 </div>
+                <div className='text-center'>{footer}</div>
              
               </div>
             </div>
