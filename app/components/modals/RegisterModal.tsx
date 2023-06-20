@@ -15,6 +15,21 @@ import   Input  from '../input/Input';
 
 function RegisterModel() {
   const store= useRegisterModal()
+  const [loading,setLoading]= useState(false)
+  const {register,handleSubmit,formState:{errors}}=useForm<FieldValues>({defaultValues:{
+    name:'',
+    password:'',
+    email:''
+  }})
+  const onSubmit:SubmitHandler<FieldValues>=(data)=>{
+    setLoading(true)
+    axios.post('/api/register',data)
+    .then(()=>store.onClose())
+    .catch((error)=>console.log(error))
+    .finally(()=>setLoading(false))
+  }
+
+
   const bodyContent = <div 
   className='flex flex-col gap-4'>
 <Heading center 
@@ -29,8 +44,12 @@ const footerContent = <div> Footer</div>
 
   return (
     <Modal 
+    disabled={loading}
     title='Register' 
     isOpen={store.isOpen}
+    onClose={store.onClose}
+    actionLabel='Continue'
+    onSubmit={handleSubmit(onSubmit)}
     body={bodyContent }
     footer={footerContent}
     />
