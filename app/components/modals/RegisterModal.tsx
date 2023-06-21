@@ -8,7 +8,7 @@ import Modal from './Modal';
 import { AiFillGithub } from 'react-icons/ai';
 import {FcGoogle} from 'react-icons/fc'
 
-
+import {toast} from 'react-hot-toast'
 import useRegisterModal from '@/app/hooks/useRegisterModel';
 import  Heading  from '../heading/Heading';
 import   Input  from '../input/Input';
@@ -25,8 +25,11 @@ function RegisterModel() {
     setLoading(true)
     axios.post('/api/register',data)
     .then(()=>store.onClose())
-    .catch((error)=>console.log(error))
+    .catch((error)=>{
+      toast.error('Raam Adithyan')
+    })
     .finally(()=>setLoading(false))
+    console.log(data)
   }
 
 

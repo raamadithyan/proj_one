@@ -64,7 +64,7 @@ errors:FieldErrors;
       peer-placeholder-shown:scale-100
       peer-placeholder-shown:-translate-y-3
       peer-focus:scale-75
-      peer-focus:-translate-y-7
+      peer-focus:-translate-y-7 
       ${errors[id]?'text-rose-500':'text-zinc-400'}
 
 
