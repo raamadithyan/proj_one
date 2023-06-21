@@ -36,7 +36,27 @@ function RegisterModel() {
 title='Welcome to Airbnb'
 subtitle='Create an account '
   />
-  <Input  />
+  <Input  id='email' type='text'
+  label='Email'
+  disabled={loading}
+  register={register}
+  errors={errors}
+  required
+  />
+  <Input  id='name' type='text'
+  label='Name'
+  disabled={loading}
+  register={register}
+  errors={errors}
+  required
+  />
+  <Input  id='password' type='password'
+  label='Password' 
+  disabled={loading}
+  register={register}
+  errors={errors}
+  required
+  />
 </div>  
 
 const footerContent = <div> Footer</div>
