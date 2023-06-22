@@ -81,7 +81,7 @@ const store= useRegisterModal()
     items-center
     flex 
     overflow-x-hidden
-    overflow-y-auto
+    overflow-y-hidden
     bg-neutral-800/60
     fixed
     inset-0
@@ -105,7 +105,7 @@ const store= useRegisterModal()
       ">
           {/* CONTeNT */}
           <div className={
-            `translate
+            `
           duration-300
           h-full
           ${showModel ? 'translate-y-0' : 'translate-y-full'}
@@ -170,7 +170,7 @@ const store= useRegisterModal()
                 <div className='flex flex-col gap-4'>
               {secondaryAction && secondaryActionLabel && (
                 <Button 
-                onClick={handleSubmit}
+                onClick={()=>{}}
                 disabled={!disabled}
                 label={'Error'}
                 icon={IoMdClose} 
@@ -187,21 +187,7 @@ const store= useRegisterModal()
                 // icon={IoMdClose} 
                 label='Continue'
                 />
-                <Button  outline
-                onClick={handleSubmit}
-                disabled={disabled}
-                // label={actionLabel}
-                icon={FcGoogle} 
-                label='Google'
-                />
-
-                <Button  outline
-                onClick={handleSubmit}
-                disabled={disabled}
-                // label={actionLabel}
-                icon={AiFillGithub} 
-                label='Github'
-                />
+        
                 </div>
                 <div className='text-center'>{footer}</div>
              

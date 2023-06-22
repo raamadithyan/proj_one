@@ -12,6 +12,8 @@ import {toast} from 'react-hot-toast'
 import useRegisterModal from '@/app/hooks/useRegisterModel';
 import  Heading  from '../heading/Heading';
 import   Input  from '../input/Input';
+import Button from '../navbar/Button';
+import { on } from 'stream';
 
 function RegisterModel() {
   const store= useRegisterModal()
@@ -61,8 +63,33 @@ subtitle='Create an account '
   required
   />
 </div>  
+  
+const footerContent = <div className='flex flex-col gap-4'> 
+  <hr  className='border-zinc-400 my-4' />
 
-const footerContent = <div> Footer</div>
+                <Button  outline
+                onClick={()=>{}}
+                icon={FcGoogle} 
+                label='Continue with Google'
+                />
+
+                <Button  outline
+                onClick={()=>{}}
+                icon={AiFillGithub} 
+                label='Continue with Github'
+                />
+                <div className='flex gap-2'>
+                  <div>Already a member?</div>
+                  <div
+                  onClick={store.onClose}
+                  className='
+                  text-neutral-500
+                   cursor-pointer
+                   hover:underline
+                   '>Signin</div>
+
+                </div>
+</div>
 
 
   return (
