@@ -38,7 +38,7 @@ function RegisterModel() {
   const bodyContent = <div 
   className='flex flex-col gap-4'>
 <Heading center 
-title='Welcome to Airbnb "Finished Register Modal"'
+title='Welcome to Airbnb "Enter Mongo Prisma"'
 subtitle='Create an account '
   />
   <Input  id='email' type='text'
