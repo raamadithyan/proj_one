@@ -81,7 +81,7 @@ const store= useRegisterModal()
     items-center
     flex 
     overflow-x-hidden
-    overflow-y-hidden
+      overflow-y-hidden
     bg-neutral-800/60
     fixed
     inset-0
@@ -161,7 +161,7 @@ const store= useRegisterModal()
               <div className='
               relative
               flex-auto
-              p-6
+              px-6
               '>
                 {body}
               </div>
