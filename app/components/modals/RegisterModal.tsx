@@ -16,6 +16,8 @@ import Button from '../navbar/Button';
 import { on } from 'stream';
 
 function RegisterModel() {
+
+
   const store= useRegisterModal()
   const [loading,setLoading]= useState(false)
   const {register,handleSubmit,formState:{errors}}=useForm<FieldValues>({defaultValues:{
